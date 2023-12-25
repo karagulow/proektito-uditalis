@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './Login.module.scss';
+import styles from './Register.module.scss';
 
-export const Login = () => {
+export const Register = () => {
   const [type, setType] = useState('password');
   const [icon, setIcon] = useState('eyeOff');
 
@@ -18,25 +18,41 @@ export const Login = () => {
   };
 
   return (
-    <div className={styles.login}>
-      <form className={styles.loginForm}>
-        <h3 className={styles.loginForm__title}>Авторизация</h3>
-        <label className={styles.loginForm__login}>
+    <div className={styles.register}>
+      <form className={styles.registerForm}>
+        <h3 className={styles.registerForm__title}>Регистрация</h3>
+        <label className={styles.registerForm__login}>
           <input
-            className={styles.loginForm__loginInput}
+            className={styles.registerForm__loginInput}
             type="text"
             placeholder="Логин"
             required
           />
         </label>
-        <label className={styles.loginForm__pw}>
+        <label className={styles.registerForm__phone}>
           <input
-            className={styles.loginForm__pwInput}
+            className={styles.registerForm__phoneInput}
+            type="tel"
+            placeholder="Телефон"
+            required
+          />
+        </label>
+        <label className={styles.registerForm__email}>
+          <input
+            className={styles.registerForm__emailInput}
+            type="email"
+            placeholder="Email"
+            required
+          />
+        </label>
+        <label className={styles.registerForm__pw}>
+          <input
+            className={styles.registerForm__pwInput}
             type={type}
             placeholder="Пароль"
             required
           />
-          <div className={styles.loginForm__pwEye} onClick={handleToggle}>
+          <div className={styles.registerForm__pwEye} onClick={handleToggle}>
             {icon === 'eyeOff' && (
               <svg
                 width="24"
@@ -67,13 +83,12 @@ export const Login = () => {
             )}
           </div>
         </label>
-        <Link to="/password-reset" className={styles.loginForm__reset}>
-          Забыли пароль?
+        <Link to="/login" className={styles.registerForm__login}>
+          Уже есть аккаунт?
         </Link>
-        <button className={styles.loginForm__auth_btn}>ВОЙТИ</button>
-        <Link to="/register" className={styles.loginForm__register_btn}>
+        <button className={styles.registerForm__register_btn}>
           ЗАРЕГИСТРИРОВАТЬСЯ
-        </Link>
+        </button>
       </form>
     </div>
   );
