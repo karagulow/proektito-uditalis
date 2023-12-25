@@ -1,0 +1,62 @@
+@import '../../assets/scss/main.scss';
+
+.menu {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 70px;
+  height: 100vh;
+  padding: 0 14px;
+  border-radius: 0px 8px 8px 0px;
+  background-color: rgba(40, 91, 76, 1);
+
+  &List {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    margin-top: 104px;
+    margin-bottom: 20px;
+
+    &__item {
+      border-radius: 8px;
+      transition: all 0.2s ease-in-out;
+
+      a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        width: 100%;
+        height: 100%;
+
+        svg {
+          min-width: 24px;
+          min-height: 24px;
+        }
+      }
+
+      &:hover {
+        background-color: rgba(52, 133, 109, 1);
+      }
+    }
+  }
+
+  &Support {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 60px;
+
+    svg {
+      min-width: 24px;
+      min-height: 24px;
+    }
+  }
+
+  &Exit {
+    padding: 10px;
+    margin-bottom: 30px;
+  }
+}

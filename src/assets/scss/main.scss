@@ -1,0 +1,10 @@
+@import './reset';
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+.main {
+  display: flex;
+  flex-direction: row;
+}

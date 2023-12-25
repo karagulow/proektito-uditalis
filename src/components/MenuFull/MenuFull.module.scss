@@ -1,0 +1,130 @@
+@import '../../assets/scss/main.scss';
+
+.menu_full {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 9;
+
+  &Block {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+
+    width: fit-content;
+    height: 100vh;
+    padding: 0 14px;
+    border-radius: 0px 8px 8px 0px;
+    background-color: rgba(40, 91, 76, 1);
+    z-index: 10;
+
+    &Title {
+      color: #fff;
+      font-size: 20px;
+      font-style: normal;
+      font-weight: 900;
+      line-height: normal;
+      margin-top: 40px;
+      margin-bottom: 35px;
+    }
+
+    &List {
+      display: flex;
+      flex-direction: column;
+      row-gap: 20px;
+      margin-bottom: 20px;
+
+      &__item {
+        border-radius: 8px;
+        transition: all 0.2s ease-in-out;
+
+        a {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          column-gap: 13px;
+          padding: 10px;
+          width: 100%;
+          height: 100%;
+
+          svg {
+            min-width: 24px;
+            min-height: 24px;
+          }
+
+          p {
+            color: #fff;
+            font-size: 14px;
+            font-weight: 400;
+            white-space: nowrap;
+          }
+        }
+
+        &:hover {
+          background-color: rgba(52, 133, 109, 1);
+        }
+      }
+    }
+
+    &Support {
+      display: flex;
+      flex-direction: row;
+      column-gap: 13px;
+
+      padding: 10px;
+      margin-bottom: 60px;
+
+      svg {
+        min-width: 24px;
+        min-height: 24px;
+      }
+
+      p {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
+    &Exit {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      column-gap: 10px;
+      padding: 10px;
+      margin-bottom: 30px;
+
+      background-color: rgba(52, 133, 109, 1);
+      border-radius: 8px;
+
+      p {
+        color: #fff;
+        font-size: 14px;
+        font-weight: 600;
+      }
+    }
+
+    &Close {
+      display: flex;
+      flex-direction: row;
+      column-gap: 10px;
+      align-items: center;
+      margin-left: auto;
+
+      svg {
+        min-width: 24px;
+        min-height: 24px;
+      }
+
+      p {
+        color: #fff;
+        font-size: 12px;
+        font-weight: 600;
+      }
+    }
+  }
+}
