@@ -1,0 +1,98 @@
+@import '../../assets/scss/main.scss';
+
+.filter {
+  position: absolute;
+  top: 58px;
+  display: flex;
+  flex-direction: column;
+
+  width: 440px;
+  height: fit-content;
+  border-radius: 8px;
+  border-radius: 8px;
+  box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.12),
+    0px 3px 4px 0px rgba(0, 0, 0, 0.14);
+  background-color: #fff;
+  z-index: 2;
+
+  &Search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 40px;
+    padding: 0 26px 0 18px;
+
+    &__input {
+      width: 100%;
+      color: rgba(0, 0, 0, 0.8);
+      font-size: 16px;
+      font-weight: 400;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.4);
+      }
+    }
+
+    &__clear {
+      position: absolute;
+      padding: 5px;
+      right: 0;
+      top: 7px;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  &Hint {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 0 15px;
+    width: 100%;
+    height: 32px;
+
+    background-color: #e8ebee;
+
+    color: rgba(0, 0, 0, 0.6);
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  &List {
+    display: flex;
+    flex-direction: column;
+    padding: 5px 0;
+
+    &__item {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      padding: 0 7px;
+
+      &Icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        margin-right: 5px;
+      }
+
+      &Name {
+        color: rgba(0, 0, 0, 0.8) !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+        margin-right: 10px;
+      }
+
+      &Count {
+        color: rgba(0, 0, 0, 0.6) !important;
+        font-size: 14px !important;
+        font-weight: 400 !important;
+      }
+    }
+  }
+}

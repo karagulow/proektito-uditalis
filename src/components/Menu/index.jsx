@@ -1,18 +1,25 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { MenuFull } from '../MenuFull';
 
 import styles from './Menu.module.scss';
+import { Support } from '../Support';
 
 export const Menu = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [supportOpen, setSupportOpen] = useState(false);
+
+  const setActive = ({ isActive }) => (isActive ? styles.active : '');
 
   return (
     <div className={styles.menu}>
-      {menuOpen && <MenuFull setMenuOpen={setMenuOpen} />}
+      {menuOpen && (
+        <MenuFull setMenuOpen={setMenuOpen} setSupportOpen={setSupportOpen} />
+      )}
+      {supportOpen && <Support setSupportOpen={setSupportOpen} />}
       <ul className={styles.menuList}>
         <li className={styles.menuList__item}>
-          <Link>
+          <NavLink to="/" className={setActive}>
             <svg
               width="24"
               height="24"
@@ -25,10 +32,10 @@ export const Menu = () => {
                 fill="white"
               />
             </svg>
-          </Link>
+          </NavLink>
         </li>
         <li className={styles.menuList__item}>
-          <Link>
+          <NavLink to="/competitor-analysis" className={setActive}>
             <svg
               width="24"
               height="24"
@@ -43,10 +50,10 @@ export const Menu = () => {
                 fill="white"
               />
             </svg>
-          </Link>
+          </NavLink>
         </li>
         <li className={styles.menuList__item}>
-          <Link>
+          <NavLink to="/analytics" className={setActive}>
             <svg
               width="24"
               height="24"
@@ -61,10 +68,10 @@ export const Menu = () => {
                 fill="white"
               />
             </svg>
-          </Link>
+          </NavLink>
         </li>
         <li className={styles.menuList__item}>
-          <Link>
+          <NavLink to="/probability" className={setActive}>
             <svg
               width="24"
               height="24"
@@ -79,10 +86,10 @@ export const Menu = () => {
                 fill="white"
               />
             </svg>
-          </Link>
+          </NavLink>
         </li>
         <li className={styles.menuList__item}>
-          <Link>
+          <NavLink to="/risks" className={setActive}>
             <svg
               width="24"
               height="24"
@@ -97,10 +104,15 @@ export const Menu = () => {
                 fill="white"
               />
             </svg>
-          </Link>
+          </NavLink>
         </li>
       </ul>
-      <button className={styles.menuSupport}>
+      <button
+        className={styles.menuSupport}
+        onClick={() => {
+          setSupportOpen(true);
+        }}
+      >
         <svg
           width="24"
           height="24"

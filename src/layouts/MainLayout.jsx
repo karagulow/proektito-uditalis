@@ -6,7 +6,9 @@ export const MainLayout = () => {
   return (
     <div className="main">
       <Menu />
-      <Outlet />
+      <div className="content">
+        <Outlet />
+      </div>
     </div>
   );
 };

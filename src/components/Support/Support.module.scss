@@ -1,0 +1,94 @@
+@import '../../assets/scss/main.scss';
+
+.support {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 11;
+  overflow-y: hidden;
+  cursor: auto;
+
+  &Block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 32px;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 616px;
+    cursor: auto;
+
+    &__close {
+      position: absolute;
+      right: 30px;
+      top: 30px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 3px;
+      cursor: pointer;
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    &__title {
+      color: rgba(0, 0, 0, 0.8);
+      text-align: center;
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 48px;
+    }
+
+    &__text {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      width: 100%;
+      height: 116px;
+      padding: 16px 12px;
+      resize: none;
+      margin-bottom: 24px;
+
+      color: rgba(0, 0, 0, 0.8);
+      font-size: 14px;
+      font-weight: 400;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    &__email {
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 4px;
+      width: 100%;
+      padding: 16px 12px;
+      margin-bottom: 24px;
+
+      color: rgba(0, 0, 0, 0.8);
+      font-size: 14px;
+      font-weight: 400;
+    }
+
+    &__btn {
+      border-radius: 4px;
+      background: #34856d;
+      box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+        0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+      padding: 8px 22px;
+
+      color: #fff;
+      font-size: 16px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+  }
+}

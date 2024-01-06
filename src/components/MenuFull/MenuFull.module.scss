@@ -1,5 +1,10 @@
 @import '../../assets/scss/main.scss';
 
+.active {
+  border-radius: 8px;
+  background-color: #34856d;
+}
+
 .menu_full {
   position: fixed;
   left: 0;

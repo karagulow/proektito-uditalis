@@ -1,15 +1,17 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import styles from './MenuFull.module.scss';
 
-export const MenuFull = ({ setMenuOpen }) => {
+export const MenuFull = ({ setMenuOpen, setSupportOpen }) => {
+  const setActive = ({ isActive }) => (isActive ? styles.active : '');
+
   return (
     <div className={styles.menu_full}>
       <div className={styles.menu_fullBlock}>
         <h1 className={styles.menu_fullBlockTitle}>ПРОЕКТИТО ЮДИТАЛИС</h1>
         <ul className={styles.menu_fullBlockList}>
           <li className={styles.menu_fullBlockList__item}>
-            <Link>
+            <NavLink to="/" className={setActive}>
               <svg
                 width="24"
                 height="24"
@@ -25,10 +27,10 @@ export const MenuFull = ({ setMenuOpen }) => {
               <p className={styles.menu_fullBlockList__itemText}>
                 Личный кабинет
               </p>
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.menu_fullBlockList__item}>
-            <Link>
+            <NavLink to="/competitor-analysis" className={setActive}>
               <svg
                 width="24"
                 height="24"
@@ -46,10 +48,10 @@ export const MenuFull = ({ setMenuOpen }) => {
               <p className={styles.menu_fullBlockList__itemText}>
                 Анализ конкурентов
               </p>
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.menu_fullBlockList__item}>
-            <Link>
+            <NavLink to="/analytics" className={setActive}>
               <svg
                 width="24"
                 height="24"
@@ -67,10 +69,10 @@ export const MenuFull = ({ setMenuOpen }) => {
               <p className={styles.menu_fullBlockList__itemText}>
                 Аналитика и отчетность
               </p>
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.menu_fullBlockList__item}>
-            <Link>
+            <NavLink to="/probability" className={setActive}>
               <svg
                 width="24"
                 height="24"
@@ -88,10 +90,10 @@ export const MenuFull = ({ setMenuOpen }) => {
               <p className={styles.menu_fullBlockList__itemText}>
                 Вероятность исхода
               </p>
-            </Link>
+            </NavLink>
           </li>
           <li className={styles.menu_fullBlockList__item}>
-            <Link>
+            <NavLink to="/risks" className={setActive}>
               <svg
                 width="24"
                 height="24"
@@ -109,10 +111,15 @@ export const MenuFull = ({ setMenuOpen }) => {
               <p className={styles.menu_fullBlockList__itemText}>
                 Риски и оптимизация стратегии
               </p>
-            </Link>
+            </NavLink>
           </li>
         </ul>
-        <button className={styles.menu_fullBlockSupport}>
+        <button
+          className={styles.menu_fullBlockSupport}
+          onClick={() => {
+            setSupportOpen(true);
+          }}
+        >
           <svg
             width="24"
             height="24"
